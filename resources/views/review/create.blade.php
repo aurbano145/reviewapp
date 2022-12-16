@@ -4,9 +4,9 @@
 <section class="module">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <h4 class="font-alt mb-0">Create new review</h4>
-        <hr class="divider-w mt-10 mb-20">
+      <h4 class="font-alt mb-0">Create new review</h4>
+      <hr class="divider-w mt-10 mb-20">
+      <div class="col-sm-6">
         <form class="form" role="form" action="{{ url('review') }}" method="post">
           @csrf
           
@@ -36,11 +36,17 @@
           @enderror
           
           <br>
-          
-          <button class="btn btn-success btn-round" type="submit">Confirm</button>
-          <a class="btn btn-danger btn-round" href="{{ url('review') }}">Back</a>
         </form>
       </div>
+      <div class="col-sm-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <button class="btn btn-success btn-round btn-lg" type="submit">Confirm</button>
+        <a class="btn btn-danger btn-round" href="{{ url('review') }}">Back</a>
+      </div>
+      <div class="col-sm-4"></div>
     </div>
   </div>
 </section>
