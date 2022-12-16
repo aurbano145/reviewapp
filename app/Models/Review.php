@@ -11,7 +11,7 @@ class Review extends Model
     
     protected $table = 'reviews';
     
-    protected $fillable = ['type', 'title', 'content', 'iduser', 'idimage'];
+    protected $fillable = ['type', 'title', 'content', 'iduser'];
     
     public function user() {
         return $this->belongsTo('App\Models\User', 'iduser');

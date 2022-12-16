@@ -11,6 +11,8 @@
           @csrf
           @method('put')
           
+          <input type="hidden" id="iduser" name="iduser" value="{{ auth()->id() }}"/>
+          
           <select class="form-control" name="type" id="type" required>
             <option value="" selected disabled hidden>Select type</option>
             @foreach ($types as $index => $type)
@@ -19,13 +21,13 @@
           </select>
           <br>
           <div class="form-group">
-            <input class="form-control input-lg" id="title" name="title" required type="text" minlength="1" maxlength="50" value="{{ old('title', $review->title) }}" placeholder="Title"/>
+            <input class="form-control input-lg" id="title" name="title" required type="text" minlength="1" maxlength="255" value="{{ old('title', $review->title) }}" placeholder="Title"/>
             @error('title')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
           <br>
-          <textarea class="form-control" name="content" id="content" required type="text" minlength="1" maxlength="300" value="{{ old('content', $review->content) }}" rows="7" placeholder="Content of the review..." style="resize: none;"></textarea>
+          <textarea class="form-control" name="content" id="content" required type="text" minlength="1" maxlength="1000" value="{{ old('content', $review->content) }}" rows="7" placeholder="Content of the review..." style="resize: none;"></textarea>
           @error('content')
                 <div class="alert alert-danger">{{ $message }}</div>
           @enderror

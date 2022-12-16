@@ -81,6 +81,31 @@
           </div>
         </div>
       </nav>
+      
+      <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Confirm delete</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <p>Do you really want to delete this review?</p>
+            </div>
+            <div class="modal-footer">
+              <div class="button-group">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form id="modalDeleteResourceForm" action="" method="post">
+                    @method('delete')
+                    @csrf
+                    <input type="submit" class="btn btn-danger" value="Delete element"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
       <div class="main">
         <section class="module bg-dark-60 portfolio-page-header" data-background="assets/images/portfolio/portfolio_header_bg.jpg">
           <div class="container">
@@ -129,6 +154,7 @@
     JavaScripts
     =============================================
     -->
+    <script src="{{ asset('assets/js/common.js') }}"></script>
     <script src="{{ asset('assets/lib/jquery/dist/jquery.js') }}"></script>
     <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>

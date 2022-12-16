@@ -112,7 +112,7 @@
                     <div class="post-meta">Posted by {{ $review->user->name }} | {{ $review->type }}</div>
                   </div>
                   <div class="post-entry">
-                    <p>{{ substr($review->content, 0, 150) }}...</p>
+                    <p>{{ substr($review->content, 0, 200) }}...</p>
                   </div>
                   <div class="post-more"><a class="more-link" href="{{ url('review/' . $review->id) }}">Read more</a></div>
                 </div>
